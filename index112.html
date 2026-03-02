@@ -191,7 +191,7 @@
       width: 150px;
       height: 150px;
       /* === YOUR PROFILE PICTURE === */
-      background: url('images/profile.jpg') center/cover;
+      background: url('images/profile 22.jpg') center/cover;
       border-radius: 50%;
       border: 4px solid var(--accent-1);
       box-shadow: 0 0 40px var(--glow);
@@ -462,7 +462,9 @@
         </form>
         <div style="min-width:160px;">
           <div style="display: flex; gap: 1.8rem; font-size: 2.5rem; margin-top: 2rem;">
-            <i class="fab fa-linkedin" style="color:var(--accent-1);"></i>
+            <a href="https://www.linkedin.com/in/sachini-nadeesha-66a710397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+  <i class="fab fa-linkedin" style="color:var(--accent-1);"></i>
+</a>
             <i class="fab fa-twitter" style="color:var(--accent-1);"></i>
             <i class="fab fa-instagram" style="color:var(--accent-1);"></i>
           </div>
@@ -507,30 +509,42 @@
 
       // blog articles data – replace the image filenames with your own
       const articles = [
+        {
+        
+    title: 'Foundations of Psychology: Understanding Human Behavior', 
+    desc: 'Based on Introduction to Psychology – explore the roots of mind and behavior.',
+    imgUrl: 'images/Introduction-to-psychology.jpg',
+    pdfFile: 'images/pdfs/Introduction-to-psychology.pdf',
+    content: `<h3>Introduction</h3><p>Your article content here...</p>`
+}
+        ,
         { 
-          title: 'Foundations of Psychology: Understanding Human Behavior', 
-          desc: 'Based on Introduction to Psychology – explore the roots of mind and behavior.',
-          imgUrl: 'images/blog1.jpg'   // <-- REPLACE with your image filename
-        },
-        { 
-          title: 'Motivation and Emotion: The Driving Forces of Human Behavior', 
-          desc: 'How emotions steer actions, and what motivates us daily.',
-          imgUrl: 'images/blog2.jpg'   // <-- REPLACE
+           title: 'Motivation and Emotion: The Driving Forces of Human Behavior', 
+    desc: 'How emotions steer actions, and what motivates us daily.',
+    imgUrl: 'images/Motivation-and-emotion.jpg',
+    pdfFile: 'images/pdfs/Motivation-and-emotion.pdf',
+    content: `<h3>Introduction</h3><p>Your article content here...</p>`
         },
         { 
           title: 'The Mental Well-being of Sri Lankans: Social and Psychological Perspectives', 
-          desc: 'Cultural insights, challenges, and resilience in Sri Lanka.',
-          imgUrl: 'images/blog3.jpg'   // <-- REPLACE
+    desc: 'Cultural insights, challenges, and resilience in Sri Lanka.',
+    imgUrl: 'images/Mental-wellbeing-of-Sri-Lankans.jpg',
+    pdfFile: 'images/pdfs/Mental-wellbeing-of-Sri-Lankans.pdf',
+    content: `<h3>Introduction</h3><p>Your article content here...</p>`
         },
         { 
           title: 'Early Adulthood: Social Development and Modern Psychological Challenges', 
-          desc: 'Developmental tasks, relationships, and mental health in early adulthood.',
-          imgUrl: 'images/blog4.jpg'   // <-- REPLACE
+    desc: 'Developmental tasks, relationships, and mental health in early adulthood.',
+    imgUrl: 'images/Early-Adulthood.jpg',
+    pdfFile: 'images/pdfs/Early-Adulthood.pdf',
+    content: `<h3>Introduction</h3><p>Your article content here...</p>`
         },
         { 
           title: 'Understanding Motivation and Emotion in Everyday Life', 
-          desc: 'A newspaper-style reflection on daily drives and feelings.',
-          imgUrl: 'images/blog5.jpg'   // <-- REPLACE
+    desc: 'A newspaper-style reflection on daily drives and feelings.',
+    imgUrl: 'images/Motivation-and-emotion-in-daily-life.jpg',
+    pdfFile: 'images/pdfs/Motivation-emotion-in-daily-life.pdf',
+    content: `<h3>Introduction</h3><p>Your article content here...</p>`
         }
       ];
 
@@ -558,19 +572,17 @@
           const art = articles[idx];
           viewer.classList.remove('hidden');
           viewer.innerHTML = `
-            <h2>${art.title}</h2>
-            <p><strong>Author:</strong> Sachini Nadeesha</p>
-            <p><em>Psychology Undergraduate – The Open University of Sri Lanka</em></p>
-            <hr style="border-color:var(--border-glow); margin:1rem 0;">
-            <h3>Introduction</h3>
-            <p>${art.desc} This article explores core psychological concepts with an evidence‑based approach. Academic references are grounded in introductory psychology literature.</p>
-            <h3>Key perspectives</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-            <h3>Conclusion</h3>
-            <p>Educational purposes only. Always consult a licensed professional.</p>
-            <p style="margin-top:1rem;"><i class="fas fa-book-open"></i> References: OpenStax Psychology, APA style (fictional example).</p>
-            <p style="color:var(--accent-1);">Disclaimer: for educational use only.</p>
-            <button class="btn" id="closeArticle">← back to blog</button>
+             <h2>${art.title}</h2>
+  <p><strong>Author:</strong> Sachini Nadeesha</p>
+  <hr>
+  <p>Your article is available as a PDF. Click the button below to open it.</p>
+  <p style="margin-top:2rem;">
+    <a href="${art.pdfFile}" target="_blank" class="btn" style="background: var(--accent-1); color: white; font-size: 1.2rem;">
+      <i class="fas fa-file-pdf"></i> Open Article (PDF)
+    </a>
+  </p>
+  <p style="color:var(--accent-1);">Disclaimer: for educational use only.</p>
+  <button class="btn" id="closeArticle">← back to blog</button>
           `;
           viewer.scrollIntoView({behavior:'smooth'});
           document.getElementById('closeArticle')?.addEventListener('click', ()=> viewer.classList.add('hidden'));
@@ -786,7 +798,7 @@
   .logo-scroll {
  width: 38px;
   height: 38px;
-  background: url('images/Reflective Mind Studio.png') no-repeat center/contain;
+  background: url('images/logo.png') no-repeat center/contain;
   opacity: 1;               /* ← now always visible */
   transition: opacity 0.2s;
   background: url('images/your-actual-filename.jpg') no-repeat center/contain;
@@ -1056,288 +1068,5 @@ body.scrolled .logo-scroll {
     .article-page { background: var(--surface); padding: 2rem; border-radius: 40px; max-width: 800px; margin: 2rem auto; }
     .hidden { display: none; }
   </style>
-</head>
-<body>
-  <canvas id="particle-canvas"></canvas>
-  <div class="bg-float"><span></span><span></span></div>
 
-  <!-- Sticky nav with logo (top-left) -->
-  <nav id="navbar">
-    <div class="nav-logo">
-      <span class="logo-scroll"></span>
-      <span style="font-weight: 600; letter-spacing: 1px;">REFLECTIVE MIND STUDIO</span>
-    </div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#blog">Blog</a>
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <button class="dark-toggle" id="themeToggle"><i class="fas fa-moon"></i> / <i class="fas fa-sun"></i></button>
-  </nav>
-
-  <!-- whatsapp fixed -->
-  <a href="https://whatsapp.com/dl/" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <!-- back to top -->
-  <div id="backToTop"><i class="fas fa-arrow-up"></i></div>
-
-  <main class="container">
-    <!-- HOME SECTION -->
-    <section id="home">
-      <div class="hero">
-        <div class="profile-img" title="profile.png"></div>
-        <h1>Sachini Nadeesha</h1>
-        <div class="subhead">Psychology Content Writer · Mental Health Blogger</div>
-        <div class="location"><i class="fas fa-map-marker-alt"></i> Matara, Southern Province, Sri Lanka</div>
-        <div class="languages"><i class="fas fa-globe"></i> Sinhala | English | Japanese</div>
-        <div class="intro-text">
-          <p>At Reflective Mind Studio, writing is approached as both an intellectual craft and a psychological inquiry. I specialize in research-informed psychology content that translates complex theories into clear, engaging, and accessible language. My work bridges academic understanding with practical insight, making psychological knowledge meaningful for modern readers.</p><br>
-          <p>With a focused interest in mental health, emotional development, and cognitive processes, I create structured, evidence-based content tailored for educational platforms, blogs, and professional websites. Every piece is developed with academic integrity, clarity of thought, and respect for psychological accuracy.</p><br>
-          <p><strong>Reflective Mind Studio is built on one principle: thoughtful writing shapes informed minds.</strong></p>
-        </div>
-        <div class="scroll-down"><i class="fas fa-chevron-down fa-2x" style="color:var(--accent-1);"></i></div>
-      </div>
-    </section>
-
-    <!-- ABOUT PAGE -->
-    <section id="about">
-      <h2 style="font-size: 2rem; margin-bottom:1.5rem;"><i class="fas fa-user-astronaut" style="color:var(--accent-2);"></i> About</h2>
-      <div style="background: var(--surface); border-radius: 28px; padding: 2rem;">
-        <p>I am currently pursuing a <strong>BSc (Hons) in Psychology</strong> at The Open University of Sri Lanka. Alongside my degree, I am completing a <strong>Diploma in Counselling (In Progress)</strong> at Oxford Lanka Campus (Pvt) Ltd.</p><br>
-        <p><strong>Academic interests include:</strong> Mental Health · Emotional Development · Cognitive Processes · Social & Developmental Psychology · Psychological Research & Writing</p><br>
-        <p><em>Position as: Psychology Content Writer, Research-Oriented Writer, Ethical & Evidence-Based Approach.</em></p>
-      </div>
-    </section>
-
-    <!-- BLOG SECTION with 5 cards (images from your folder) -->
-    <section id="blog">
-      <h2 style="font-size: 2rem;">Latest reflections</h2>
-      <div class="blog-grid" id="blogGrid"></div>
-    </section>
-
-    <!-- hidden article viewer -->
-    <div id="articleViewer" class="article-page hidden"></div>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <h2>Services</h2>
-      <div class="services-grid" id="servicesList"></div>
-    </section>
-
-    <!-- PRICING accordion -->
-    <section id="pricing">
-      <h2>Pricing</h2>
-      <div id="pricingAccordion"></div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Let’s connect</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-        <form class="contact-form" id="contactForm">
-          <input type="text" placeholder="Your name" required>
-          <input type="email" placeholder="Email address" required>
-          <textarea rows="4" placeholder="Your message..."></textarea>
-          <button class="submit-btn" type="submit"><i class="fas fa-paper-plane"></i> Send message</button>
-        </form>
-        <div style="min-width:160px;">
-          <div style="display: flex; gap: 1.8rem; font-size: 2.5rem; margin-top: 2rem;">
-            <i class="fab fa-linkedin" style="color:var(--accent-1);"></i>
-            <i class="fab fa-twitter" style="color:var(--accent-1);"></i>
-            <i class="fab fa-instagram" style="color:var(--accent-1);"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="footer">
-      © 2025 Reflective Mind Studio — Psychology content with care
-    </footer>
-  </main>
-
-  <script>
-    (function() {
-      // dark/light toggle
-      const toggle = document.getElementById('themeToggle');
-      toggle.addEventListener('click', () => {
-        document.body.classList.toggle('light');
-      });
-
-      // sticky nav logo
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 70) document.body.classList.add('scrolled');
-        else document.body.classList.remove('scrolled');
-      });
-
-      // back to top button
-      const backBtn = document.getElementById('backToTop');
-      window.addEventListener('scroll', ()=> {
-        if (window.scrollY > 500) backBtn.classList.add('show');
-        else backBtn.classList.remove('show');
-      });
-      backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
-
-      // smooth scroll for nav links
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const id = link.getAttribute('href').substring(1);
-          document.getElementById(id).scrollIntoView({behavior:'smooth'});
-        });
-      });
-
-      // blog articles data – replace the image filenames with your own
-      const articles =  [
-  { 
-    title: 'Foundations of Psychology: Understanding Human Behavior', 
-    desc: 'Based on Introduction to Psychology – explore the roots of mind and behavior.',
-    imgUrl: 'images/introduction to psychology.jpg'
-  },
-  { 
-    title: 'Motivation and Emotion: The Driving Forces of Human Behavior', 
-    desc: 'How emotions steer actions, and what motivates us daily.',
-    imgUrl: 'images/motivation and emotion.jpg'
-  },
-  { 
-    title: 'The Mental Well-being of Sri Lankans: Social and Psychological Perspectives', 
-    desc: 'Cultural insights, challenges, and resilience in Sri Lanka.',
-    imgUrl: 'images/logo6.jpeg'
-  },
-  { 
-    title: 'Early Adulthood: Social Development and Modern Psychological Challenges', 
-    desc: 'Developmental tasks, relationships, and mental health in early adulthood.',
-    imgUrl: 'images/early adulthood.jpg'
-  },
-  { 
-    title: 'Understanding Motivation and Emotion in Everyday Life', 
-    desc: 'A newspaper-style reflection on daily drives and feelings.',
-    imgUrl: 'images/understanding motivation and emotion everyday.jpg'
-  }
-];
-
-      function renderBlog() {
-        const grid = document.getElementById('blogGrid');
-        grid.innerHTML = articles.map((a,i) => `
-          <div class="card" data-index="${i}">
-            <div class="card-img" style="background-image: url('${a.imgUrl}');"></div>
-            <div class="card-content">
-              <h3>${a.title}</h3>
-              <p>${a.desc.substring(0,70)}…</p>
-              <button class="btn readFullBtn" data-id="${i}">Read Full Article <i class="fas fa-bolt" style="color:gold;"></i></button>
-            </div>
-          </div>
-        `).join('');
-      }
-      renderBlog();
-
-      // show full article in viewer
-      const viewer = document.getElementById('articleViewer');
-      document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('readFullBtn') || e.target.closest('.readFullBtn')) {
-          const btn = e.target.closest('.readFullBtn');
-          const idx = btn.dataset.id;
-          const art = articles[idx];
-          viewer.classList.remove('hidden');
-          viewer.innerHTML = `
-            <h2>${art.title}</h2>
-            <p><strong>Author:</strong> Sachini Nadeesha</p>
-            <p><em>Psychology Undergraduate – The Open University of Sri Lanka</em></p>
-            <hr style="border-color:var(--border-glow); margin:1rem 0;">
-            <h3>Introduction</h3>
-            <p>${art.desc} This article explores core psychological concepts with an evidence‑based approach. Academic references are grounded in introductory psychology literature.</p>
-            <h3>Key perspectives</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-            <h3>Conclusion</h3>
-            <p>Educational purposes only. Always consult a licensed professional.</p>
-            <p style="margin-top:1rem;"><i class="fas fa-book-open"></i> References: OpenStax Psychology, APA style (fictional example).</p>
-            <p style="color:var(--accent-1);">Disclaimer: for educational use only.</p>
-            <button class="btn" id="closeArticle">← back to blog</button>
-          `;
-          viewer.scrollIntoView({behavior:'smooth'});
-          document.getElementById('closeArticle')?.addEventListener('click', ()=> viewer.classList.add('hidden'));
-        }
-      });
-
-      // services cards
-      const services = [
-        { icon:'fa-pen-fancy', name:'Psychology Blog Writing', desc:'Engaging blog posts that translate psychology for broad audiences.' },
-        { icon:'fa-flask', name:'Research-Based Articles', desc:'Literature‑informed content with academic rigor.' },
-        { icon:'fa-scroll', name:'Academic Content Writing', desc:'Structured essays, study notes & educational material.' },
-        { icon:'fa-heart', name:'Mental Health Awareness Content', desc:'Sensitive, stigma‑free writing for mental health.' },
-        { icon:'fa-envelope-open-text', name:'Psychology Newsletter Writing', desc:'Curated psychology insights for your readers.' },
-        { icon:'fa-pencil-ruler', name:'Content Editing & Proofreading', desc:'Refine tone, clarity and psychological accuracy.' }
-      ];
-      document.getElementById('servicesList').innerHTML = services.map(s => `
-        <div class="card">
-          <div class="card-content" style="text-align:center;">
-            <i class="fas ${s.icon} fa-3x" style="color:var(--accent-2); margin-bottom:0.8rem;"></i>
-            <h3>${s.name}</h3>
-            <p>${s.desc}</p>
-            <button class="btn hireBtn">Hire Now <i class="fas fa-arrow-right"></i></button>
-          </div>
-        </div>
-      `).join('');
-
-      // pricing accordion
-      const pricingData = {
-        'Writing Articles': ['Short Blog Post (500–700 words) – $10–$20','Standard Article (800–1000 words) – $20–$40','Long Article (1200–1500 words) – $40–$60','SEO-Optimized Article (800–1200 words) – $40–$80'],
-        'Other Writing Services': ['Social Media Captions – $5–$15','Psychology Newsletter – $15–$40','Proofreading & Editing – $10–$30','Topic & Outline Creation – $5–$15']
-      };
-      const accordionDiv = document.getElementById('pricingAccordion');
-      accordionDiv.innerHTML = Object.entries(pricingData).map(([cat, items], index) => `
-        <div class="accordion-item" data-cat="${cat}">
-          <div class="accordion-title">${cat} <i class="fas fa-chevron-down"></i></div>
-          <div class="accordion-content">${items.map(i => `<div class="pricing-row"><span>${i.split('–')[0]}</span><span>– ${i.split('–')[1]}</span></div>`).join('')}</div>
-        </div>
-      `).join('');
-
-      document.querySelectorAll('.accordion-title').forEach(title => {
-        title.addEventListener('click', function(e) {
-          const parent = this.parentElement;
-          const isOpen = parent.classList.contains('open');
-          document.querySelectorAll('.accordion-item').forEach(item => item.classList.remove('open'));
-          if (!isOpen) parent.classList.add('open');
-        });
-      });
-
-      // fake form alert
-      document.getElementById('contactForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('📬 Thanks for reaching out. (Demo – your message would be sent.)');
-      });
-
-      // hire now dummy alert
-      document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('hireBtn')) alert('✨ Inquiry received. I’ll get back soon. (demo)');
-      });
-
-      // particle animation
-      const canvas = document.getElementById('particle-canvas');
-      let ctx = canvas.getContext('2d');
-      function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-      window.addEventListener('resize', resizeCanvas); resizeCanvas();
-      let particles = [];
-      for (let i=0; i<40; i++) particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, r:Math.random()*3+1, dx:(Math.random()-0.5)*0.2, dy:(Math.random()-0.5)*0.2});
-
-      function animateParticles() {
-        if (!ctx) return;
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.fillStyle = document.body.classList.contains('light') ? '#7f8fa050' : '#b8b0d530';
-        particles.forEach(p => {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-          ctx.fill();
-          p.x += p.dx; p.y += p.dy;
-          if (p.x<0||p.x>canvas.width) p.dx*=-1;
-          if (p.y<0||p.y>canvas.height) p.dy*=-1;
-        });
-        requestAnimationFrame(animateParticles);
-      }
-      animateParticles();
-    })();
-  </script>
-  <!-- ensure body class for scrolled logo -->
-  <style>body.scrolled .logo-scroll { opacity: 1; }</style>
-</body>
 </html>
